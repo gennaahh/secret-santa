@@ -1,0 +1,132 @@
+:root {
+  --bg: #f7efe4;
+  --bg-glow-1: #f6dcd3;
+  --bg-glow-2: #dfe9dc;
+  --surface: #fffaf3;
+  --surface-alt: #f4e9dc;
+  --line: #e6d6c4;
+  --text: #4a3a33;
+  --text-muted: #8a7469;
+
+  --accent: #d9776b;
+  --accent-strong: #b5554b;
+  --accent-soft: #f8dfd8;
+  --green: #7fa37f;
+  --green-soft: #e3eedf;
+  --gold: #d9b26a;
+  --gold-soft: #fbf0d8;
+  --snow: #ffffff;
+
+  --shadow-sm: 0 2px 8px rgba(120, 70, 50, 0.08);
+  --shadow: 0 10px 30px rgba(120, 70, 50, 0.12);
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Nunito', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--text);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 10% 0%, var(--bg-glow-1) 0, transparent 45%),
+    radial-gradient(circle at 100% 100%, var(--bg-glow-2) 0, transparent 50%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+strong {
+  font-weight: 800;
+  color: var(--text);
+}
+
+/* Card condivisa */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1.75rem;
+  padding: 1.4rem 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 2rem;
+    border-radius: 2rem;
+  }
+}
+
+/* Bottoni */
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.4rem;
+  font: inherit;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  min-height: 3.1rem;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(217, 119, 107, 0.35);
+}
+
+.btn-primary:hover {
+  background: var(--accent-strong);
+}
+
+.btn-ghost {
+  background: var(--surface);
+  color: var(--text);
+  border: 1.5px solid var(--line);
+}
+
+.btn-ghost:hover {
+  background: var(--surface-alt);
+}
+
+.btn-wide {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    padding: 0.9rem 1.8rem;
+  }
+
+  .btn-wide {
+    width: auto;
+    min-width: 16rem;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
